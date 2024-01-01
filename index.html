@@ -1,14 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage no-websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>方向错了停下来就是最大的进步</title>
 <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./01.css" type="text/css">
 
+<style>  
+#canvasOne {  
+      position: absolute;  
+      left: 60%;  
+      top: 60%;  
+      transform: translateY(-50%);  
+      z-index: -1;
+}  
+</style> 
 
 <script language=javascript>
 function click() {if (event.button==2||event.button==3) {alert('提供的技术仅供学习参考测试，利用本文提供的信息造成的直接或间接损失由使用者自行承担。');}}document.onmousedown=click
 </script>
+
 <script>
         function fuckyou() {
             window.close(); //关闭当前窗口(防抽)
@@ -40,36 +51,9 @@ opera.postError == 'function' && console.profile.length > 0)) {
                 fuckyou();
         }
 </script>
-
-
 </head>
 
-<style>
-html, body {
-    height: 100%;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    position: relative; 
-}
-
-#globalArea { 
-    height:60%;
-    width: 50%;
-    margin: 0;
-    padding: 0;
-    position: absolute;  
-    right: 0;  /* 将元素定位在body的右边中间 */  
-    top: 55%;  /* 将元素定位在body的上边中间 */  
-    transform: translate(0, -50%); 
-}
-</style>
-<script src="https://www.ddosi.org/ossx/hit/1.js"></script>
-<script src="https://www.ddosi.org/ossx/hit/2.js"></script>
-<script src="https://www.ddosi.org/ossx/hit/3.js"></script>
-<script src="https://www.ddosi.org/ossx/hit/4.js"></script>
-
-<body class="max-width mx-auto px3 ltr">
+<body class="max-width mx-auto px3 ltr" oncontextmenu="self.event.returnValue=false" onselectstart="return false">
 
 <div class="content index py4 h-card">
 <marquee scrollamount="3" behavior=alternate>
@@ -108,14 +92,12 @@ html, body {
 </section>
 
 
-<div id="globalArea" style="background-color: transparent;">
-<script id="rendered-js">
-var container = document.getElementById("globalArea");
-var controller = new GIO.Controller(container);
-controller.addData(data);
-controller.init();
-</script>
+<script src="./qiu.js.download"></script>
+<div style="text-align:right">
+<canvas id="canvasOne" width="700" height="700"></canvas>
 </div>
+<script type="text/javascript" src="./01.js.download"></script>
+
 
 <section id="projects"><span class="h1">Projects</span>
 <ul class="project-list">
