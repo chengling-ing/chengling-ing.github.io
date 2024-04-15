@@ -75,11 +75,29 @@ opera.postError == 'function' && console.profile.length > 0)) {
 <li><a href="https://chengling-ing.github.io/fallacy.html">Fallacy</a></li>
 </header>
 
-<section id="projects"><span class="h1">企业模拟环境内网靶场详细</span>
+<section id="projects"><span class="h1">企业模拟环境内网靶场详细</span><br>
 <ul class="project-list">
-<section id="projects"><span class="h3">架构拓扑如下：</span>
-<img src="/tuopu.jpg" alt="架构拓扑图">
-<li>2024-02-15 02:20:00 蓄意要走的是为丢下，握手言和的我将其定义为离开。</li>
+<section id="projects"><span class="h3">架构拓扑如下：</span><br>
+<img src="/tuopu.jpg" alt="架构拓扑图"><br>
+      <br>
+<section id="projects"><span class="h3">网络详细：</span><br>
+<li>以明御安全网关作为出口设备：172.16.16.x/24</li><br>
+<li>DMZ隔离区以明御堡垒机全局运维、明御终端安全全局防护(未启用防御，只做监测记录)</li><br>
+      <li>EDR：172.16.17.x0/24 | 10.16.16.x0/16</li><br>
+      <li>USM：172.16.17.x2/24</li><br>
+<li>以明御安全网关作为出口设备：172.16.16.x/24</li><br>
+<li>###运维区域与DMZ区域同网段，采用EDR微隔离阻断</li><br>
+      <li>USM：172.16.17.x4/24</li><br>
+      <li>双网卡主机：172.16.17.x5/24 | 10.16.16.x5/16</li><br>
+<li>###内网区域分为工作PC与服务PC区域，中间采用EDR微隔离阻断</li><br>
+      <li>工作区域：10.16.16.x/16 | 服务器区：10.16.17.x0/16</li><br>
+      <li>上网机：172.16.16.x3/24 | 10.16.16.x1/16</li><br>
+      <li>数据库：10.16.17.x1/16</li><br>
+<section id="projects"><span class="h3">漏洞简介：</span><br>
+<li>以明御安全网关映射8443端口到运维区明域堡垒机'172.16.17.x4/24'为漏洞入口，该堡垒机存在未授权任意用户添加</li><br>
+      <li>堡垒机中存在双网卡主机'172.16.17.x5/24'一台资产，该主机无法出网，可作为跳板机器攻击内网办公电脑 '172.16.16.x3/24'</li><br>
+      <li>上网机为图形化Centos且配置Web漏洞环境服务，该主机可与数据库服务器建立Mysql连接，可通过该主机上线CS、中转等...</li><br>
+      <li>数据库上配置为Mysql的UDF提权以及Redis的未授权写密钥...</li><br>
 </ul>
 </section>
 
